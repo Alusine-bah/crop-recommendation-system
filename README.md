@@ -65,7 +65,7 @@ Five classifiers were trained and compared on the same split:
 | Logistic Regression (`max_iter=5000`) | 96.36% |
 | K-Nearest Neighbors | 95.68% |
 | Support Vector Machine (RBF) | 96.82% |
-| Decision Tree | 98.41% |
+| Decision Tree | 98.86% |
 | **Random Forest** | **99.32%** |
 
 ### 3. Final model
@@ -80,7 +80,7 @@ A Gradio interface wraps the model. The user enters seven numeric values; the ap
 
 **Random Forest — 99.32% accuracy on the held-out test set (440 samples).**
 
-The model correctly classified 437 of 440 test samples. Its advantage over the Decision Tree (98.41%) comes from bagging, which reduces the variance that a single tree is prone to.
+The model correctly classified 437 of 440 test samples. Its advantage over the Decision Tree (98.86%) comes from bagging, which reduces the variance that a single tree is prone to.
 
 ### Example prediction
 
