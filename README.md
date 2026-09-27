@@ -24,7 +24,7 @@ Choosing the right crop for a given plot of land is one of the most consequentia
 | Property | Value |
 |---|---|
 | Source | Kaggle "Crop Recommendation Dataset" |
-| File | `Crop_recommendation.csv` |
+| File | `data/Crop_recommendation.csv` |
 | Rows | 2,200 |
 | Columns | 8 (7 features + 1 target) |
 | Missing values | 0 |
@@ -85,5 +85,109 @@ The model correctly classified 437 of 440 test samples. Its advantage over the D
 ### Example prediction
 
 ```python
-predict_crop(N=90, P=42, K=43, temp=20.5, humidity=80, ph=6.5, rainfall=200)
+predict_crop(N=90, P=42, K=43, temp=22, humidity=82, ph=6.5, rainfall=220)
 # → 'rice'
+```
+
+---
+
+## 📸 Screenshots
+
+### Interactive Gradio app
+
+The user enters seven soil and climate parameters:
+
+![Gradio input form](figures/gradio_form.png)
+
+The trained model returns the recommended crop:
+
+![Gradio output showing rice](figures/gradio_output.png)
+
+### Class balance in the dataset
+
+All 22 crops have exactly 100 samples each, so the model is not biased toward any class:
+
+![Crop distribution](figures/crop_distribution.png)
+
+---
+
+## 📂 Project Structure
+
+```
+crop-recommendation-system/
+├── README.md
+├── requirements.txt
+├── code/
+│   └── Crop_Recommendation.ipynb    # Full notebook: EDA, training, evaluation, app
+├── data/
+│   └── Crop_recommendation.csv      # Dataset (2,200 rows, 22 classes)
+├── figures/
+│   ├── crop_distribution.png
+│   ├── gradio_form.png
+│   └── gradio_output.png
+└── report/
+    └── EEE 4710 Project Team Credible.pdf
+```
+
+---
+
+## 🚀 How to Run
+
+```bash
+# 1. Clone
+git clone https://github.com/Alusine-bah/crop-recommendation-system.git
+cd crop-recommendation-system
+
+# 2. Install dependencies
+pip install -r requirements.txt
+
+# 3. Launch the notebook
+jupyter notebook code/Crop_Recommendation.ipynb
+```
+
+Or open the notebook in Google Colab and upload `data/Crop_recommendation.csv` to the Colab file panel before running.
+
+---
+
+## 📄 Report
+
+A full write-up of the project — including the problem statement, methodology, model selection rationale, and conclusions — is available in the course report:
+
+**`report/EEE 4710 Project Team Credible.pdf`**
+Course: Artificial Intelligence and Machine Learning Lab (EEE 4710)
+Islamic University of Technology (IUT), OIC
+
+---
+
+## ⚠️ Limitations
+
+- **Dataset-bound.** The model only knows the ranges it was trained on. Inputs outside those ranges (e.g. pH > 14) produce unreliable predictions.
+- **No real-time weather.** Rainfall, temperature, and humidity are user-supplied, not pulled from live sources.
+- **No soil-test integration.** Nutrient values must be entered manually.
+- **Not field-validated.** Accuracy is measured on a held-out split of the same dataset, not on independent farm trials.
+
+---
+
+## 🌟 Future Improvements
+
+- [ ] Deploy the Gradio app permanently on Hugging Face Spaces
+- [ ] Integrate a live weather API so climate inputs update automatically
+- [ ] Add soil-test upload / sensor integration
+- [ ] Expand the dataset with regional and seasonal variation
+- [ ] Experiment with gradient boosting (XGBoost, LightGBM)
+- [ ] Add multi-language support for wider accessibility
+
+---
+
+## 👤 Author
+
+**Alusine Bah**
+Electrical & Electronics Engineering Student
+Islamic University of Technology (IUT), OIC
+Passionate about Engineering, AI, and Educational Content
+
+---
+
+## 📜 License
+
+This project is released for educational purposes. The dataset is sourced from Kaggle; please refer to its original license for reuse terms.
