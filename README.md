@@ -151,9 +151,9 @@ Or open the notebook in Google Colab and upload `data/Crop_recommendation.csv` t
 
 ## 📄 Report
 
-A full write-up of the project — including the problem statement, methodology, model selection rationale, and conclusions — is available in the course report:
+A full write-up of the project — including the problem statement, methodology, model selection rationale, and conclusions — is available as a standalone technical report:
 
-**`report/EEE 4710 Project Team Credible.pdf`**
+**`report/report.pdf`**
 Course: Artificial Intelligence and Machine Learning Lab (EEE 4710)
 Islamic University of Technology (IUT), OIC
 
